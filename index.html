@@ -12,23 +12,24 @@
 <meta property="og:image" content="https://www.fondationsalwaandaloussi.com/og-image.jpg">
 <meta property="og:locale" content="fr_FR">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 :root {
-  --green-deep: #1a3a2a;
-  --green-dark: #234d35;
-  --green-mid: #2d6e4a;
-  --green-accent: #3d9e6a;
-  --green-light: #e8f5ee;
-  --beige: #f5efe6;
-  --beige-dark: #e8ddd0;
-  --beige-warm: #d4c5b0;
-  --cream: #faf8f4;
-  --gold: #ede8df;
-  --gold-light: #e8e2d8;
-  --text-dark: #1a1a1a;
-  --text-body: #3a3a3a;
-  --text-muted: #6a6a6a;
+  /* Palette institutionnelle */
+  --green-deep: #183B35;   /* vert profond */
+  --green-dark: #183B35;
+  --green-mid: #2E5A52;
+  --green-accent: #9A7F52; /* or champagne foncé (petits textes sur fond clair) */
+  --green-light: #E7ECE8;
+  --beige: #ECE7DC;
+  --beige-dark: #E0D8C8;
+  --beige-warm: #B49A70;   /* or champagne */
+  --cream: #F4F1EA;        /* ivoire */
+  --gold: #B49A70;         /* or champagne */
+  --gold-light: #C8B38C;   /* or champagne clair (sur fond vert) */
+  --text-dark: #262B2C;
+  --text-body: #303632;    /* gris anthracite */
+  --text-muted: #5E6562;
   --white: #ffffff;
 }
 
@@ -37,7 +38,7 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   color: var(--text-body);
   background: var(--cream);
   overflow-x: hidden;
@@ -57,7 +58,7 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; color: var(--green-de
   margin-bottom: 0;
   display: block;
   margin-left: auto; margin-right: auto;
-  opacity: 0; animation: fadeUp 1.2s 0.2s ease forwards;
+  
 }
 .hero-logo-sub {
   font-family: 'Cormorant Garamond', serif;
@@ -66,7 +67,7 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; color: var(--green-de
   letter-spacing: 0.35em; text-transform: uppercase;
   color: rgb(210, 183, 121);
   margin: calc(min(400px, 65vw) * -0.165) 0 2.5rem;
-  opacity: 0; animation: fadeUp 1.2s 0.4s ease forwards;
+  
 }
 .footer-logo { height: 60px; width: auto; margin-bottom: 1rem; }
 
@@ -79,7 +80,7 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; color: var(--green-de
   background: transparent;
 }
 .navbar.scrolled {
-  background: rgba(26, 58, 42, 0.95);
+  background: rgba(24, 59, 53, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   padding: 0.7rem 3rem;
@@ -111,7 +112,7 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; color: var(--green-de
 .nav-links a:hover { color: var(--white); }
 .nav-links a:hover::after { width: 100%; }
 .btn-candidature-nav {
-  background: var(--gold); color: var(--green-deep) !important;
+  background: var(--cream); color: var(--green-deep) !important;
   padding: 0.6rem 1.5rem; border-radius: 50px;
   font-weight: 700 !important; text-transform: uppercase !important;
   font-size: 0.8rem !important; letter-spacing: 1px !important;
@@ -150,12 +151,7 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; color: var(--green-de
 }
 .hero-bg::before {
   content: ''; position: absolute; inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(13, 38, 24, 0.72) 0%,
-    rgba(26, 58, 42, 0.65) 50%,
-    rgba(13, 38, 24, 0.80) 100%
-  );
+  background: rgba(24, 59, 53, 0.72);
 }
 .hero-pattern {
   display: none;
@@ -171,15 +167,15 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; color: var(--green-de
   color: var(--gold-light);
   margin-bottom: 2rem;
   padding: 0.5rem 1.5rem;
-  border: 1px solid rgba(237,232,223,0.3);
+  border: 1px solid rgba(180,154,112,0.3);
   border-radius: 50px;
-  opacity: 0; animation: fadeUp 1s 0.3s ease forwards;
+  
 }
 .hero h1 {
   font-size: clamp(2.5rem, 6vw, 5rem);
   color: var(--white); line-height: 1.1;
   margin-bottom: 1.5rem;
-  opacity: 0; animation: fadeUp 1s 0.5s ease forwards;
+  
 }
 .hero h1 em {
   font-style: italic; color: var(--gold-light);
@@ -188,7 +184,7 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; color: var(--green-de
 }
 .hero-devises {
   margin: 2rem 0;
-  opacity: 0; animation: fadeUp 1s 0.7s ease forwards;
+  
 }
 .devise-slider {
   font-family: 'Cormorant Garamond', serif;
@@ -201,10 +197,10 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; color: var(--green-de
   display: flex; gap: 1rem;
   justify-content: center; flex-wrap: wrap;
   margin-top: 2.5rem;
-  opacity: 0; animation: fadeUp 1s 0.9s ease forwards;
+  
 }
 .btn-primary {
-  background: var(--gold); color: var(--green-deep);
+  background: var(--cream); color: var(--green-deep);
   padding: 1rem 2.5rem; border-radius: 50px;
   text-decoration: none; font-weight: 700;
   font-size: 0.9rem; letter-spacing: 1px;
@@ -215,7 +211,6 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; color: var(--green-de
 .btn-primary:hover {
   background: transparent; color: var(--white);
   border-color: var(--white);
-  transform: translateY(-2px);
 }
 .btn-secondary {
   background: transparent;
@@ -229,7 +224,6 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; color: var(--green-de
 }
 .btn-secondary:hover {
   border-color: var(--white);
-  transform: translateY(-2px);
 }
 .scroll-indicator {
   position: absolute; bottom: 0.5rem;
@@ -239,7 +233,6 @@ h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; color: var(--green-de
   color: rgba(255,255,255,0.4);
   font-size: 0.65rem; letter-spacing: 2px;
   text-transform: uppercase;
-  animation: bounce 2s infinite;
   pointer-events: none;
 }
 @keyframes bounce {
@@ -278,7 +271,7 @@ section { padding: 7rem 3rem; }
 }
 .devise-section::before {
   content: ''; position: absolute; inset: 0;
-  background: radial-gradient(ellipse at 70% 30%, rgba(61,158,106,0.1) 0%, transparent 60%);
+  background: none;
 }
 .devise-content {
   position: relative; z-index: 1;
@@ -311,8 +304,7 @@ section { padding: 7rem 3rem; }
 }
 .value-card:hover {
   background: rgba(255,255,255,0.08);
-  transform: translateY(-5px);
-  border-color: rgba(237,232,223,0.3);
+  border-color: rgba(180,154,112,0.3);
 }
 .value-icon {
   width: 60px; height: 60px;
@@ -333,7 +325,7 @@ section { padding: 7rem 3rem; }
 /* ===== QUI SOMMES-NOUS ===== */
 .about-section {
   position: relative;
-  background: linear-gradient(135deg, #0d2618 0%, var(--green-deep) 100%);
+  background: var(--green-deep);
   padding: 0 !important;
   min-height: 80vh;
   display: flex; align-items: center;
@@ -341,11 +333,7 @@ section { padding: 7rem 3rem; }
 .about-section::before {
   content: '';
   position: absolute; inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(13, 38, 24, 0.35) 0%,
-    rgba(13, 38, 24, 0) 100%
-  );
+  background: none;
   z-index: 1;
 }
 .about-grid {
@@ -454,7 +442,7 @@ section { padding: 7rem 3rem; }
 .capsule {
   text-align: left;
   padding-top: 1.8rem;
-  border-top: 1px solid rgba(26,58,42,0.15);
+  border-top: 1px solid rgba(24,59,53,0.15);
 }
 .capsule-index {
   display: block;
@@ -491,10 +479,9 @@ section { padding: 7rem 3rem; }
   font-weight: 600;
   color: #fff;
   padding: 1.2rem 1.5rem;
-  background: linear-gradient(135deg, var(--green-deep) 0%, var(--green-mid) 100%);
-  border-left: 5px solid var(--beige-warm);
-  border-radius: 0 14px 14px 0;
-  box-shadow: 0 12px 30px rgba(26,58,42,0.18);
+  background: var(--green-deep);
+  border-left: 4px solid var(--gold);
+  border-radius: 0 10px 10px 0;
 }
 .capsule-conviction strong {
   display: block;
@@ -511,7 +498,7 @@ section { padding: 7rem 3rem; }
 }
 .parcours-section::before {
   content: ''; position: absolute; inset: 0;
-  background: radial-gradient(ellipse at 30% 80%, rgba(61,158,106,0.08) 0%, transparent 60%);
+  background: none;
 }
 .parcours-container {
   max-width: 1100px; margin: 0 auto;
@@ -534,7 +521,7 @@ section { padding: 7rem 3rem; }
   content: ''; position: absolute;
   left: 25px; top: 0; bottom: 0;
   width: 2px;
-  background: linear-gradient(to bottom, var(--gold), rgba(237,232,223,0.2));
+  background: var(--gold);
 }
 .parcours-step {
   position: relative; margin-bottom: 4rem;
@@ -548,13 +535,13 @@ section { padding: 7rem 3rem; }
   content: attr(data-step);
   position: absolute; left: -60px;
   width: 50px; height: 50px;
-  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  background: var(--gold);
   border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.3rem; font-weight: 700;
   color: var(--white);
-  box-shadow: 0 0 30px rgba(237,232,223,0.3);
+  box-shadow: 0 0 30px rgba(180,154,112,0.3);
 }
 .parcours-step-content {
   background: rgba(255,255,255,0.05);
@@ -565,7 +552,7 @@ section { padding: 7rem 3rem; }
 }
 .parcours-step-content:hover {
   background: rgba(255,255,255,0.08);
-  border-color: rgba(237,232,223,0.2);
+  border-color: rgba(180,154,112,0.2);
 }
 .parcours-step h3 {
   color: var(--white); font-size: 1.6rem;
@@ -650,15 +637,14 @@ section { padding: 7rem 3rem; }
   gap: 0.8rem;
 }
 .partner-card:hover {
-  transform: translateY(-5px);
   box-shadow: 0 15px 40px rgba(0,0,0,0.08);
 }
 .partner-card-cta {
   border: 2px dashed var(--gold);
-  background: rgba(237,232,223,0.04);
+  background: rgba(180,154,112,0.04);
 }
 .partner-card-cta:hover {
-  background: rgba(237,232,223,0.08);
+  background: rgba(180,154,112,0.08);
 }
 .partner-logo-box {
   height: 80px;
@@ -668,7 +654,7 @@ section { padding: 7rem 3rem; }
   margin-bottom: 0.3rem;
 }
 .partner-card h4 {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-size: 0.95rem;
   font-weight: 700;
   color: var(--text-dark);
@@ -718,7 +704,6 @@ section { padding: 7rem 3rem; }
   border: 1px solid rgba(0,0,0,0.04);
 }
 .news-card:hover {
-  transform: translateY(-5px);
   box-shadow: 0 15px 40px rgba(0,0,0,0.08);
 }
 .news-card-image {
@@ -743,12 +728,12 @@ section { padding: 7rem 3rem; }
 
 /* ===== DONS ===== */
 .donate-section {
-  background: linear-gradient(135deg, var(--green-deep), #0d2618);
+  background: var(--green-deep);
   position: relative; overflow: hidden;
 }
 .donate-section::before {
   content: ''; position: absolute; inset: 0;
-  background: radial-gradient(ellipse at 50% 50%, rgba(237,232,223,0.08) 0%, transparent 60%);
+  background: none;
 }
 .donate-container {
   max-width: 900px; margin: 0 auto;
@@ -801,7 +786,7 @@ section { padding: 7rem 3rem; }
 .form-group select {
   width: 100%; padding: 0.9rem 1.2rem;
   border: 2px solid var(--beige-dark);
-  border-radius: 12px; font-family: 'DM Sans', sans-serif;
+  border-radius: 12px; font-family: 'Lato', sans-serif;
   font-size: 0.9rem; color: var(--text-dark);
   background: var(--cream);
   transition: all 0.3s ease;
@@ -822,7 +807,6 @@ section { padding: 7rem 3rem; }
   gap: 2rem; margin-bottom: 2.5rem;
   background: var(--green-deep); color: rgba(255,255,255,0.88);
   border-radius: 20px; padding: 2.2rem 2.5rem;
-  box-shadow: 0 12px 30px rgba(26,58,42,0.15);
 }
 .contact-info-label {
   display: block;
@@ -846,7 +830,7 @@ section { padding: 7rem 3rem; }
 .btn-submit {
   background: var(--green-deep); color: var(--white);
   padding: 1rem 3rem; border: none; border-radius: 50px;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-size: 0.9rem; font-weight: 600;
   letter-spacing: 1px; text-transform: uppercase;
   cursor: pointer; transition: all 0.3s ease;
@@ -854,7 +838,6 @@ section { padding: 7rem 3rem; }
 }
 .btn-submit:hover {
   background: var(--green-mid);
-  transform: translateY(-2px);
 }
 
 /* ===== CANDIDATURE ===== */
@@ -919,7 +902,7 @@ section { padding: 7rem 3rem; }
   max-width: 350px;
 }
 .footer-links h4 {
-  color: var(--white); font-family: 'DM Sans', sans-serif;
+  color: var(--white); font-family: 'Lato', sans-serif;
   font-size: 0.85rem; font-weight: 600;
   letter-spacing: 1px; text-transform: uppercase;
   margin-bottom: 1.5rem;
@@ -989,7 +972,7 @@ section { padding: 7rem 3rem; }
     left: 0;
     right: 0;
     height: 100vh;
-    background: rgba(26,58,42,0.99);
+    background: rgba(24,59,53,0.99);
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -1052,6 +1035,12 @@ section { padding: 7rem 3rem; }
     background-position: 50% 65%;
   }
 }
+
+/* ===== Style sobre : pas d'animations décoratives ===== */
+.fade-in, .fade-in-left, .fade-in-right, .parcours-step {
+  opacity: 1 !important; transform: none !important; transition: none !important;
+}
+.value-card h3 { margin-top: 0.2rem; }
 </style>
 </head>
 <body>
@@ -1097,22 +1086,18 @@ section { padding: 7rem 3rem; }
     <p class="devise-tagline fade-in">Agir, soutenir et transmettre pour révéler les talents et bâtir le Maroc de demain.</p>
     <div class="values-grid">
       <div class="value-card fade-in">
-        <div class="value-icon">✦</div>
         <h3>Excellence</h3>
         <p>Soutenir l'ambition d'une génération vers la réussite académique. Chaque talent mérite d'accéder aux meilleures opportunités.</p>
       </div>
       <div class="value-card fade-in">
-        <div class="value-icon">⚖</div>
         <h3>Égalité des chances</h3>
         <p>Briser les barrières sociales pour libérer l'ambition. Aucun talent ne devrait être limité par son origine.</p>
       </div>
       <div class="value-card fade-in">
-        <div class="value-icon">♥</div>
         <h3>Solidarité</h3>
         <p>Réussir ensemble pour le Maroc de demain. Former une communauté engagée et responsable.</p>
       </div>
       <div class="value-card fade-in">
-        <div class="value-icon">🌱</div>
         <h3>Enfance &amp; Avenir</h3>
         <p>Accompagner chaque enfant dans son quotidien et sa scolarité. Lui offrir les conditions pour s'épanouir et construire son avenir.</p>
       </div>
@@ -1314,19 +1299,19 @@ section { padding: 7rem 3rem; }
           <svg viewBox="0 0 260 90" xmlns="http://www.w3.org/2000/svg" style="width:180px;height:64px;">
             <defs>
               <linearGradient id="fjfGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#1a3a2a"/>
-                <stop offset="100%" stop-color="#2d6e4a"/>
+                <stop offset="0%" stop-color="#183B35"/>
+                <stop offset="100%" stop-color="#2E5A52"/>
               </linearGradient>
             </defs>
             <!-- House/home icon -->
             <polygon points="40,10 10,35 18,35 18,55 62,55 62,35 70,35" fill="url(#fjfGrad)" stroke="none"/>
-            <rect x="28" y="38" width="12" height="17" rx="1" fill="#ede8df"/>
-            <rect x="44" y="38" width="8" height="10" rx="1" fill="#ede8df"/>
+            <rect x="28" y="38" width="12" height="17" rx="1" fill="#B49A70"/>
+            <rect x="44" y="38" width="8" height="10" rx="1" fill="#B49A70"/>
             <!-- Star -->
-            <polygon points="40,16 42,23 49,23 43,27 45,34 40,30 35,34 37,27 31,23 38,23" fill="#ede8df" opacity="0.9"/>
-            <text x="160" y="30" font-family="Georgia,serif" font-size="14" font-weight="bold" fill="#1a3a2a" text-anchor="middle">FOYER DES</text>
-            <text x="160" y="50" font-family="Georgia,serif" font-size="14" font-weight="bold" fill="#1a3a2a" text-anchor="middle">JEUNES FILLES</text>
-            <text x="160" y="70" font-family="Georgia,serif" font-size="11" fill="#2d6e4a" text-anchor="middle" letter-spacing="2">MARRAKECH</text>
+            <polygon points="40,16 42,23 49,23 43,27 45,34 40,30 35,34 37,27 31,23 38,23" fill="#B49A70" opacity="0.9"/>
+            <text x="160" y="30" font-family="Georgia,serif" font-size="14" font-weight="bold" fill="#183B35" text-anchor="middle">FOYER DES</text>
+            <text x="160" y="50" font-family="Georgia,serif" font-size="14" font-weight="bold" fill="#183B35" text-anchor="middle">JEUNES FILLES</text>
+            <text x="160" y="70" font-family="Georgia,serif" font-size="11" fill="#2E5A52" text-anchor="middle" letter-spacing="2">MARRAKECH</text>
           </svg>
         </div>
         <h4>Foyer de Jeunes Filles de Marrakech</h4>
@@ -1339,23 +1324,23 @@ section { padding: 7rem 3rem; }
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" style="width:70px;height:70px;">
             <!-- Main handshake SVG drawing -->
             <!-- Left arm -->
-            <path d="M2 42 Q8 36 16 38 L30 32 Q34 30 36 33 L40 38" stroke="#ede8df" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2 42 Q8 36 16 38 L30 32 Q34 30 36 33 L40 38" stroke="#B49A70" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
             <!-- Right arm -->
-            <path d="M78 42 Q72 36 64 38 L50 32 Q46 30 44 33 L40 38" stroke="#ede8df" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M78 42 Q72 36 64 38 L50 32 Q46 30 44 33 L40 38" stroke="#B49A70" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
             <!-- Clasped hands center -->
-            <path d="M28 44 Q34 38 40 38 Q46 38 52 44 Q48 52 40 54 Q32 52 28 44Z" fill="#e8e2d8" stroke="#ede8df" stroke-width="1.5"/>
+            <path d="M28 44 Q34 38 40 38 Q46 38 52 44 Q48 52 40 54 Q32 52 28 44Z" fill="#e8e2d8" stroke="#B49A70" stroke-width="1.5"/>
             <!-- Fingers left hand -->
-            <path d="M28 44 Q25 40 27 37 Q30 35 32 38" stroke="#ede8df" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-            <path d="M30 43 Q27 38 29 35 Q32 33 34 37" stroke="#ede8df" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-            <path d="M33 42 Q31 37 33 34 Q36 32 38 36" stroke="#ede8df" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M28 44 Q25 40 27 37 Q30 35 32 38" stroke="#B49A70" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M30 43 Q27 38 29 35 Q32 33 34 37" stroke="#B49A70" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M33 42 Q31 37 33 34 Q36 32 38 36" stroke="#B49A70" stroke-width="2.5" fill="none" stroke-linecap="round"/>
             <!-- Fingers right hand -->
-            <path d="M52 44 Q55 40 53 37 Q50 35 48 38" stroke="#ede8df" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-            <path d="M50 43 Q53 38 51 35 Q48 33 46 37" stroke="#ede8df" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-            <path d="M47 42 Q49 37 47 34 Q44 32 42 36" stroke="#ede8df" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M52 44 Q55 40 53 37 Q50 35 48 38" stroke="#B49A70" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M50 43 Q53 38 51 35 Q48 33 46 37" stroke="#B49A70" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <path d="M47 42 Q49 37 47 34 Q44 32 42 36" stroke="#B49A70" stroke-width="2.5" fill="none" stroke-linecap="round"/>
             <!-- Wrist left -->
-            <path d="M16 38 Q20 42 28 44" stroke="#ede8df" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+            <path d="M16 38 Q20 42 28 44" stroke="#B49A70" stroke-width="3.5" fill="none" stroke-linecap="round"/>
             <!-- Wrist right -->
-            <path d="M64 38 Q60 42 52 44" stroke="#ede8df" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+            <path d="M64 38 Q60 42 52 44" stroke="#B49A70" stroke-width="3.5" fill="none" stroke-linecap="round"/>
           </svg>
         </div>
         <h4 style="color:var(--green-deep);">Devenir partenaire</h4>
@@ -1391,20 +1376,20 @@ section { padding: 7rem 3rem; }
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1rem;">
         <div>
           <label style="display:block; font-size:0.85rem; font-weight:600; color:var(--text-dark); margin-bottom:0.4rem;">Nom complet *</label>
-          <input type="text" name="nom" required placeholder="Votre nom" style="width:100%; padding:0.8rem 1rem; border:2px solid var(--beige-dark); border-radius:10px; font-family:'DM Sans',sans-serif; font-size:0.9rem; outline:none;">
+          <input type="text" name="nom" required placeholder="Votre nom" style="width:100%; padding:0.8rem 1rem; border:2px solid var(--beige-dark); border-radius:10px; font-family:'Lato',sans-serif; font-size:0.9rem; outline:none;">
         </div>
         <div>
           <label style="display:block; font-size:0.85rem; font-weight:600; color:var(--text-dark); margin-bottom:0.4rem;">Email *</label>
-          <input type="email" name="email" required placeholder="votre@email.com" style="width:100%; padding:0.8rem 1rem; border:2px solid var(--beige-dark); border-radius:10px; font-family:'DM Sans',sans-serif; font-size:0.9rem; outline:none;">
+          <input type="email" name="email" required placeholder="votre@email.com" style="width:100%; padding:0.8rem 1rem; border:2px solid var(--beige-dark); border-radius:10px; font-family:'Lato',sans-serif; font-size:0.9rem; outline:none;">
         </div>
       </div>
       <div style="margin-bottom:1rem;">
         <label style="display:block; font-size:0.85rem; font-weight:600; color:var(--text-dark); margin-bottom:0.4rem;">Organisation / Institution *</label>
-        <input type="text" name="organisation" required placeholder="Nom de votre organisation" style="width:100%; padding:0.8rem 1rem; border:2px solid var(--beige-dark); border-radius:10px; font-family:'DM Sans',sans-serif; font-size:0.9rem; outline:none;">
+        <input type="text" name="organisation" required placeholder="Nom de votre organisation" style="width:100%; padding:0.8rem 1rem; border:2px solid var(--beige-dark); border-radius:10px; font-family:'Lato',sans-serif; font-size:0.9rem; outline:none;">
       </div>
       <div style="margin-bottom:1rem;">
         <label style="display:block; font-size:0.85rem; font-weight:600; color:var(--text-dark); margin-bottom:0.4rem;">Type de partenariat *</label>
-        <select name="type_partenariat" required style="width:100%; padding:0.8rem 1rem; border:2px solid var(--beige-dark); border-radius:10px; font-family:'DM Sans',sans-serif; font-size:0.9rem; outline:none; background:var(--cream);">
+        <select name="type_partenariat" required style="width:100%; padding:0.8rem 1rem; border:2px solid var(--beige-dark); border-radius:10px; font-family:'Lato',sans-serif; font-size:0.9rem; outline:none; background:var(--cream);">
           <option value="">Sélectionner</option>
           <option value="Partenariat académique">Partenariat académique</option>
           <option value="Partenariat financier / Don">Partenariat financier / Don</option>
@@ -1415,7 +1400,7 @@ section { padding: 7rem 3rem; }
       </div>
       <div style="margin-bottom:1rem;">
         <label style="display:block; font-size:0.85rem; font-weight:600; color:var(--text-dark); margin-bottom:0.4rem;">Message</label>
-        <textarea name="message" rows="4" placeholder="Décrivez votre proposition de partenariat..." style="width:100%; padding:0.8rem 1rem; border:2px solid var(--beige-dark); border-radius:10px; font-family:'DM Sans',sans-serif; font-size:0.9rem; outline:none; resize:vertical;"></textarea>
+        <textarea name="message" rows="4" placeholder="Décrivez votre proposition de partenariat..." style="width:100%; padding:0.8rem 1rem; border:2px solid var(--beige-dark); border-radius:10px; font-family:'Lato',sans-serif; font-size:0.9rem; outline:none; resize:vertical;"></textarea>
       </div>
       <div style="margin-bottom:1.5rem; padding:1rem; background:var(--green-light); border-radius:12px;">
         <label style="display:block; font-size:0.85rem; font-weight:700; color:var(--green-deep); margin-bottom:0.8rem;">Êtes-vous prêt à :</label>
@@ -1432,7 +1417,7 @@ section { padding: 7rem 3rem; }
           Participer au réseau alumni
         </label>
       </div>
-      <button type="submit" id="partnerSubmitBtn" style="width:100%; background:var(--green-deep); color:white; padding:1rem; border:none; border-radius:50px; font-family:'DM Sans',sans-serif; font-size:0.9rem; font-weight:600; letter-spacing:1px; text-transform:uppercase; cursor:pointer; transition:all 0.3s;">
+      <button type="submit" id="partnerSubmitBtn" style="width:100%; background:var(--green-deep); color:white; padding:1rem; border:none; border-radius:50px; font-family:'Lato',sans-serif; font-size:0.9rem; font-weight:600; letter-spacing:1px; text-transform:uppercase; cursor:pointer; transition:all 0.3s;">
         Envoyer ma demande →
       </button>
     </form>
@@ -1445,7 +1430,6 @@ section { padding: 7rem 3rem; }
     <span class="section-label fade-in">Témoignages</span>
     <h2 class="section-title fade-in">Ils racontent leur parcours avec la Fondation</h2>
     <div class="testimonials-placeholder fade-in">
-      <div class="icon">🎬</div>
       <p><strong>Vidéos de témoignages à venir</strong></p>
       <p>Les témoignages des étudiants de la Fondation seront ajoutés sous forme de vidéos.</p>
     </div>
@@ -1467,13 +1451,13 @@ section { padding: 7rem 3rem; }
           <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
             <defs>
               <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#1a3a2a"/>
-                <stop offset="100%" style="stop-color:#2d6e4a"/>
+                <stop offset="0%" style="stop-color:#183B35"/>
+                <stop offset="100%" style="stop-color:#2E5A52"/>
               </linearGradient>
             </defs>
             <rect width="400" height="200" fill="url(#bg1)"/>
             <!-- Grille zellige fond -->
-            <g opacity="0.06" stroke="#ede8df" stroke-width="0.4">
+            <g opacity="0.06" stroke="#B49A70" stroke-width="0.4">
               <line x1="0" y1="25" x2="400" y2="25"/><line x1="0" y1="50" x2="400" y2="50"/><line x1="0" y1="75" x2="400" y2="75"/>
               <line x1="0" y1="100" x2="400" y2="100"/><line x1="0" y1="125" x2="400" y2="125"/><line x1="0" y1="150" x2="400" y2="150"/><line x1="0" y1="175" x2="400" y2="175"/>
               <line x1="25" y1="0" x2="25" y2="200"/><line x1="50" y1="0" x2="50" y2="200"/><line x1="75" y1="0" x2="75" y2="200"/>
@@ -1483,36 +1467,36 @@ section { padding: 7rem 3rem; }
               <line x1="325" y1="0" x2="325" y2="200"/><line x1="350" y1="0" x2="350" y2="200"/><line x1="375" y1="0" x2="375" y2="200"/>
             </g>
             <!-- Grande arche principale -->
-            <path d="M118,200 L118,105 Q118,42 200,42 Q282,42 282,105 L282,200" fill="none" stroke="#ede8df" stroke-width="2" stroke-opacity="0.45"/>
+            <path d="M118,200 L118,105 Q118,42 200,42 Q282,42 282,105 L282,200" fill="none" stroke="#B49A70" stroke-width="2" stroke-opacity="0.45"/>
             <!-- Arche intérieure -->
-            <path d="M144,200 L144,112 Q144,70 200,70 Q256,70 256,112 L256,200" fill="none" stroke="#ede8df" stroke-width="1" stroke-opacity="0.22"/>
+            <path d="M144,200 L144,112 Q144,70 200,70 Q256,70 256,112 L256,200" fill="none" stroke="#B49A70" stroke-width="1" stroke-opacity="0.22"/>
             <!-- Petite arche décorative -->
-            <path d="M163,200 L163,118 Q163,84 200,84 Q237,84 237,118 L237,200" fill="none" stroke="#ede8df" stroke-width="0.7" stroke-opacity="0.14"/>
+            <path d="M163,200 L163,118 Q163,84 200,84 Q237,84 237,118 L237,200" fill="none" stroke="#B49A70" stroke-width="0.7" stroke-opacity="0.14"/>
             <!-- Pointe de l arche -->
-            <path d="M186,42 Q200,22 214,42" fill="none" stroke="#ede8df" stroke-width="1.5" stroke-opacity="0.4"/>
-            <circle cx="200" cy="20" r="3.5" fill="#ede8df" opacity="0.5"/>
+            <path d="M186,42 Q200,22 214,42" fill="none" stroke="#B49A70" stroke-width="1.5" stroke-opacity="0.4"/>
+            <circle cx="200" cy="20" r="3.5" fill="#B49A70" opacity="0.5"/>
             <!-- Étoile à 8 branches zellige centrale -->
             <g transform="translate(200,130)">
-              <polygon points="0,-32 7,-12 30,-12 14,4 20,26 0,14 -20,26 -14,4 -30,-12 -7,-12" fill="#ede8df" opacity="0.85"/>
-              <polygon points="0,-20 4.5,-8 20,-8 9,2 13,17 0,9 -13,17 -9,2 -20,-8 -4.5,-8" fill="#1a3a2a" opacity="0.75"/>
-              <circle cx="0" cy="0" r="5" fill="#ede8df" opacity="0.75"/>
-              <circle cx="0" cy="0" r="2.5" fill="#1a3a2a" opacity="0.6"/>
+              <polygon points="0,-32 7,-12 30,-12 14,4 20,26 0,14 -20,26 -14,4 -30,-12 -7,-12" fill="#B49A70" opacity="0.85"/>
+              <polygon points="0,-20 4.5,-8 20,-8 9,2 13,17 0,9 -13,17 -9,2 -20,-8 -4.5,-8" fill="#183B35" opacity="0.75"/>
+              <circle cx="0" cy="0" r="5" fill="#B49A70" opacity="0.75"/>
+              <circle cx="0" cy="0" r="2.5" fill="#183B35" opacity="0.6"/>
             </g>
             <!-- Étoiles petites latérales -->
             <g transform="translate(68,100)">
-              <polygon points="0,-14 3,-5 13,-5 6,1 9,11 0,6 -9,11 -6,1 -13,-5 -3,-5" fill="#ede8df" opacity="0.4"/>
+              <polygon points="0,-14 3,-5 13,-5 6,1 9,11 0,6 -9,11 -6,1 -13,-5 -3,-5" fill="#B49A70" opacity="0.4"/>
             </g>
             <g transform="translate(332,100)">
-              <polygon points="0,-14 3,-5 13,-5 6,1 9,11 0,6 -9,11 -6,1 -13,-5 -3,-5" fill="#ede8df" opacity="0.4"/>
+              <polygon points="0,-14 3,-5 13,-5 6,1 9,11 0,6 -9,11 -6,1 -13,-5 -3,-5" fill="#B49A70" opacity="0.4"/>
             </g>
             <!-- Colonnes latérales -->
-            <rect x="55" y="160" width="8" height="40" fill="#ede8df" opacity="0.12" rx="2"/>
-            <rect x="337" y="160" width="8" height="40" fill="#ede8df" opacity="0.12" rx="2"/>
-            <ellipse cx="59" cy="160" rx="8" ry="4" fill="#ede8df" opacity="0.15"/>
-            <ellipse cx="341" cy="160" rx="8" ry="4" fill="#ede8df" opacity="0.15"/>
+            <rect x="55" y="160" width="8" height="40" fill="#B49A70" opacity="0.12" rx="2"/>
+            <rect x="337" y="160" width="8" height="40" fill="#B49A70" opacity="0.12" rx="2"/>
+            <ellipse cx="59" cy="160" rx="8" ry="4" fill="#B49A70" opacity="0.15"/>
+            <ellipse cx="341" cy="160" rx="8" ry="4" fill="#B49A70" opacity="0.15"/>
             <!-- Bordure bas -->
-            <rect x="0" y="193" width="400" height="4" fill="#ede8df" opacity="0.12"/>
-            <text x="200" y="16" font-family="Georgia,serif" font-size="8" fill="#ede8df" opacity="0.55" text-anchor="middle" letter-spacing="5">FONDATION SALWA ANDALOUSSI</text>
+            <rect x="0" y="193" width="400" height="4" fill="#B49A70" opacity="0.12"/>
+            <text x="200" y="16" font-family="Georgia,serif" font-size="8" fill="#B49A70" opacity="0.55" text-anchor="middle" letter-spacing="5">FONDATION SALWA ANDALOUSSI</text>
           </svg>
         </div>
         <div class="news-card-body">
@@ -1528,79 +1512,79 @@ section { padding: 7rem 3rem; }
           <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
             <defs>
               <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#0d2618"/>
-                <stop offset="100%" style="stop-color:#1a3a2a"/>
+                <stop offset="0%" style="stop-color:#183B35"/>
+                <stop offset="100%" style="stop-color:#183B35"/>
               </linearGradient>
               <linearGradient id="pageL" x1="100%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" style="stop-color:#ede8df;stop-opacity:0.35"/>
-                <stop offset="100%" style="stop-color:#ede8df;stop-opacity:0.08"/>
+                <stop offset="0%" style="stop-color:#B49A70;stop-opacity:0.35"/>
+                <stop offset="100%" style="stop-color:#B49A70;stop-opacity:0.08"/>
               </linearGradient>
               <linearGradient id="pageR" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" style="stop-color:#ede8df;stop-opacity:0.35"/>
-                <stop offset="100%" style="stop-color:#ede8df;stop-opacity:0.08"/>
+                <stop offset="0%" style="stop-color:#B49A70;stop-opacity:0.35"/>
+                <stop offset="100%" style="stop-color:#B49A70;stop-opacity:0.08"/>
               </linearGradient>
             </defs>
             <rect width="400" height="200" fill="url(#bg2)"/>
             <!-- Rayons lumineux fond -->
             <g opacity="0.05">
-              <line x1="200" y1="100" x2="0" y2="0" stroke="#ede8df" stroke-width="1.5"/>
-              <line x1="200" y1="100" x2="100" y2="0" stroke="#ede8df" stroke-width="1.5"/>
-              <line x1="200" y1="100" x2="200" y2="0" stroke="#ede8df" stroke-width="1.5"/>
-              <line x1="200" y1="100" x2="300" y2="0" stroke="#ede8df" stroke-width="1.5"/>
-              <line x1="200" y1="100" x2="400" y2="0" stroke="#ede8df" stroke-width="1.5"/>
-              <line x1="200" y1="100" x2="50" y2="0" stroke="#ede8df" stroke-width="1"/>
-              <line x1="200" y1="100" x2="150" y2="0" stroke="#ede8df" stroke-width="1"/>
-              <line x1="200" y1="100" x2="250" y2="0" stroke="#ede8df" stroke-width="1"/>
-              <line x1="200" y1="100" x2="350" y2="0" stroke="#ede8df" stroke-width="1"/>
-              <line x1="200" y1="100" x2="0" y2="200" stroke="#ede8df" stroke-width="1.5"/>
-              <line x1="200" y1="100" x2="400" y2="200" stroke="#ede8df" stroke-width="1.5"/>
+              <line x1="200" y1="100" x2="0" y2="0" stroke="#B49A70" stroke-width="1.5"/>
+              <line x1="200" y1="100" x2="100" y2="0" stroke="#B49A70" stroke-width="1.5"/>
+              <line x1="200" y1="100" x2="200" y2="0" stroke="#B49A70" stroke-width="1.5"/>
+              <line x1="200" y1="100" x2="300" y2="0" stroke="#B49A70" stroke-width="1.5"/>
+              <line x1="200" y1="100" x2="400" y2="0" stroke="#B49A70" stroke-width="1.5"/>
+              <line x1="200" y1="100" x2="50" y2="0" stroke="#B49A70" stroke-width="1"/>
+              <line x1="200" y1="100" x2="150" y2="0" stroke="#B49A70" stroke-width="1"/>
+              <line x1="200" y1="100" x2="250" y2="0" stroke="#B49A70" stroke-width="1"/>
+              <line x1="200" y1="100" x2="350" y2="0" stroke="#B49A70" stroke-width="1"/>
+              <line x1="200" y1="100" x2="0" y2="200" stroke="#B49A70" stroke-width="1.5"/>
+              <line x1="200" y1="100" x2="400" y2="200" stroke="#B49A70" stroke-width="1.5"/>
             </g>
             <!-- Livre ouvert 3D -->
             <g transform="translate(200,102)">
               <!-- Ombre portée -->
               <ellipse cx="0" cy="68" rx="88" ry="9" fill="#000" opacity="0.25"/>
               <!-- Page gauche avec courbure -->
-              <path d="M-88,-52 Q-90,-62 -78,-64 L-4,-64 Q2,-60 2,-52 L2,56 Q-2,62 -16,64 L-82,64 Q-90,60 -90,54 Z" fill="url(#pageL)" stroke="#ede8df" stroke-width="1.2" stroke-opacity="0.4"/>
+              <path d="M-88,-52 Q-90,-62 -78,-64 L-4,-64 Q2,-60 2,-52 L2,56 Q-2,62 -16,64 L-82,64 Q-90,60 -90,54 Z" fill="url(#pageL)" stroke="#B49A70" stroke-width="1.2" stroke-opacity="0.4"/>
               <!-- Ombre interne gauche -->
               <path d="M-10,-64 L-4,-64 Q2,-60 2,-52 L2,56 L-10,58 Z" fill="#000" opacity="0.12"/>
               <!-- Page droite avec courbure -->
-              <path d="M88,-52 Q90,-62 78,-64 L4,-64 Q-2,-60 -2,-52 L-2,56 Q2,62 16,64 L82,64 Q90,60 90,54 Z" fill="url(#pageR)" stroke="#ede8df" stroke-width="1.2" stroke-opacity="0.4"/>
+              <path d="M88,-52 Q90,-62 78,-64 L4,-64 Q-2,-60 -2,-52 L-2,56 Q2,62 16,64 L82,64 Q90,60 90,54 Z" fill="url(#pageR)" stroke="#B49A70" stroke-width="1.2" stroke-opacity="0.4"/>
               <!-- Ombre interne droite -->
               <path d="M10,-64 L4,-64 Q-2,-60 -2,-52 L-2,56 L10,58 Z" fill="#000" opacity="0.12"/>
               <!-- Reliure -->
-              <path d="M-3,-66 Q0,-70 3,-66 L3,62 Q0,66 -3,62 Z" fill="#ede8df" opacity="0.28"/>
+              <path d="M-3,-66 Q0,-70 3,-66 L3,62 Q0,66 -3,62 Z" fill="#B49A70" opacity="0.28"/>
               <!-- Lignes de texte gauche -->
-              <line x1="-80" y1="-44" x2="-8" y2="-44" stroke="#ede8df" stroke-width="1.3" opacity="0.3"/>
-              <line x1="-80" y1="-30" x2="-8" y2="-30" stroke="#ede8df" stroke-width="1.3" opacity="0.3"/>
-              <line x1="-80" y1="-16" x2="-8" y2="-16" stroke="#ede8df" stroke-width="1.3" opacity="0.3"/>
-              <line x1="-80" y1="-2" x2="-8" y2="-2" stroke="#ede8df" stroke-width="1.3" opacity="0.3"/>
-              <line x1="-80" y1="12" x2="-8" y2="12" stroke="#ede8df" stroke-width="1.3" opacity="0.3"/>
-              <line x1="-80" y1="26" x2="-45" y2="26" stroke="#ede8df" stroke-width="1.3" opacity="0.3"/>
+              <line x1="-80" y1="-44" x2="-8" y2="-44" stroke="#B49A70" stroke-width="1.3" opacity="0.3"/>
+              <line x1="-80" y1="-30" x2="-8" y2="-30" stroke="#B49A70" stroke-width="1.3" opacity="0.3"/>
+              <line x1="-80" y1="-16" x2="-8" y2="-16" stroke="#B49A70" stroke-width="1.3" opacity="0.3"/>
+              <line x1="-80" y1="-2" x2="-8" y2="-2" stroke="#B49A70" stroke-width="1.3" opacity="0.3"/>
+              <line x1="-80" y1="12" x2="-8" y2="12" stroke="#B49A70" stroke-width="1.3" opacity="0.3"/>
+              <line x1="-80" y1="26" x2="-45" y2="26" stroke="#B49A70" stroke-width="1.3" opacity="0.3"/>
               <!-- Lignes de texte droite -->
-              <line x1="8" y1="-44" x2="80" y2="-44" stroke="#ede8df" stroke-width="1.3" opacity="0.3"/>
-              <line x1="8" y1="-30" x2="80" y2="-30" stroke="#ede8df" stroke-width="1.3" opacity="0.3"/>
-              <line x1="8" y1="-16" x2="80" y2="-16" stroke="#ede8df" stroke-width="1.3" opacity="0.3"/>
-              <line x1="8" y1="-2" x2="80" y2="-2" stroke="#ede8df" stroke-width="1.3" opacity="0.3"/>
-              <line x1="8" y1="12" x2="80" y2="12" stroke="#ede8df" stroke-width="1.3" opacity="0.3"/>
-              <line x1="8" y1="26" x2="50" y2="26" stroke="#ede8df" stroke-width="1.3" opacity="0.3"/>
+              <line x1="8" y1="-44" x2="80" y2="-44" stroke="#B49A70" stroke-width="1.3" opacity="0.3"/>
+              <line x1="8" y1="-30" x2="80" y2="-30" stroke="#B49A70" stroke-width="1.3" opacity="0.3"/>
+              <line x1="8" y1="-16" x2="80" y2="-16" stroke="#B49A70" stroke-width="1.3" opacity="0.3"/>
+              <line x1="8" y1="-2" x2="80" y2="-2" stroke="#B49A70" stroke-width="1.3" opacity="0.3"/>
+              <line x1="8" y1="12" x2="80" y2="12" stroke="#B49A70" stroke-width="1.3" opacity="0.3"/>
+              <line x1="8" y1="26" x2="50" y2="26" stroke="#B49A70" stroke-width="1.3" opacity="0.3"/>
               <!-- Chapeau de diplôme -->
-              <polygon points="0,-90 -52,-68 0,-56 52,-68" fill="#ede8df" opacity="0.6"/>
-              <rect x="-5" y="-68" width="10" height="20" fill="#ede8df" opacity="0.45"/>
-              <circle cx="0" cy="-48" r="5.5" fill="#ede8df" opacity="0.6"/>
+              <polygon points="0,-90 -52,-68 0,-56 52,-68" fill="#B49A70" opacity="0.6"/>
+              <rect x="-5" y="-68" width="10" height="20" fill="#B49A70" opacity="0.45"/>
+              <circle cx="0" cy="-48" r="5.5" fill="#B49A70" opacity="0.6"/>
               <!-- Pompon -->
-              <line x1="52" y1="-68" x2="52" y2="-42" stroke="#ede8df" stroke-width="2" opacity="0.45"/>
-              <circle cx="52" cy="-38" r="5" fill="#ede8df" opacity="0.45"/>
+              <line x1="52" y1="-68" x2="52" y2="-42" stroke="#B49A70" stroke-width="2" opacity="0.45"/>
+              <circle cx="52" cy="-38" r="5" fill="#B49A70" opacity="0.45"/>
             </g>
             <!-- Particules flottantes -->
-            <circle cx="42" cy="35" r="2.5" fill="#ede8df" opacity="0.35"/>
-            <circle cx="78" cy="155" r="1.8" fill="#ede8df" opacity="0.28"/>
-            <circle cx="348" cy="42" r="2.5" fill="#ede8df" opacity="0.35"/>
-            <circle cx="362" cy="162" r="1.8" fill="#ede8df" opacity="0.28"/>
-            <circle cx="110" cy="22" r="1.2" fill="#ede8df" opacity="0.3"/>
-            <circle cx="298" cy="178" r="1.2" fill="#ede8df" opacity="0.3"/>
-            <circle cx="155" cy="172" r="1.5" fill="#ede8df" opacity="0.25"/>
-            <circle cx="248" cy="18" r="1.5" fill="#ede8df" opacity="0.25"/>
-            <text x="200" y="188" font-family="Georgia,serif" font-size="8.5" fill="#ede8df" opacity="0.5" text-anchor="middle" letter-spacing="5">EXCELLENCE · MÉRITE · AVENIR</text>
+            <circle cx="42" cy="35" r="2.5" fill="#B49A70" opacity="0.35"/>
+            <circle cx="78" cy="155" r="1.8" fill="#B49A70" opacity="0.28"/>
+            <circle cx="348" cy="42" r="2.5" fill="#B49A70" opacity="0.35"/>
+            <circle cx="362" cy="162" r="1.8" fill="#B49A70" opacity="0.28"/>
+            <circle cx="110" cy="22" r="1.2" fill="#B49A70" opacity="0.3"/>
+            <circle cx="298" cy="178" r="1.2" fill="#B49A70" opacity="0.3"/>
+            <circle cx="155" cy="172" r="1.5" fill="#B49A70" opacity="0.25"/>
+            <circle cx="248" cy="18" r="1.5" fill="#B49A70" opacity="0.25"/>
+            <text x="200" y="188" font-family="Georgia,serif" font-size="8.5" fill="#B49A70" opacity="0.5" text-anchor="middle" letter-spacing="5">EXCELLENCE · MÉRITE · AVENIR</text>
           </svg>
         </div>
         <div class="news-card-body">
@@ -1617,63 +1601,63 @@ section { padding: 7rem 3rem; }
             <defs>
               <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
                 <stop offset="0%" style="stop-color:#234d35"/>
-                <stop offset="100%" style="stop-color:#1a3a2a"/>
+                <stop offset="100%" style="stop-color:#183B35"/>
               </linearGradient>
               <radialGradient id="glow1" cx="35%" cy="50%" r="40%">
-                <stop offset="0%" style="stop-color:#ede8df;stop-opacity:0.18"/>
-                <stop offset="100%" style="stop-color:#ede8df;stop-opacity:0"/>
+                <stop offset="0%" style="stop-color:#B49A70;stop-opacity:0.18"/>
+                <stop offset="100%" style="stop-color:#B49A70;stop-opacity:0"/>
               </radialGradient>
               <radialGradient id="glow2" cx="65%" cy="50%" r="40%">
-                <stop offset="0%" style="stop-color:#ede8df;stop-opacity:0.18"/>
-                <stop offset="100%" style="stop-color:#ede8df;stop-opacity:0"/>
+                <stop offset="0%" style="stop-color:#B49A70;stop-opacity:0.18"/>
+                <stop offset="100%" style="stop-color:#B49A70;stop-opacity:0"/>
               </radialGradient>
             </defs>
             <rect width="400" height="200" fill="url(#bg3)"/>
             <rect width="400" height="200" fill="url(#glow1)"/>
             <rect width="400" height="200" fill="url(#glow2)"/>
             <!-- Noeuds réseau -->
-            <circle cx="200" cy="100" r="12" fill="#ede8df" opacity="0.88"/>
-            <circle cx="200" cy="100" r="20" fill="none" stroke="#ede8df" stroke-width="1" opacity="0.2"/>
-            <circle cx="200" cy="100" r="34" fill="none" stroke="#ede8df" stroke-width="0.6" opacity="0.1"/>
-            <circle cx="128" cy="62" r="8.5" fill="#ede8df" opacity="0.65"/>
-            <circle cx="272" cy="62" r="8.5" fill="#ede8df" opacity="0.65"/>
-            <circle cx="128" cy="138" r="8.5" fill="#ede8df" opacity="0.65"/>
-            <circle cx="272" cy="138" r="8.5" fill="#ede8df" opacity="0.65"/>
-            <circle cx="58" cy="100" r="6" fill="#ede8df" opacity="0.48"/>
-            <circle cx="342" cy="100" r="6" fill="#ede8df" opacity="0.48"/>
-            <circle cx="200" cy="22" r="5" fill="#ede8df" opacity="0.38"/>
-            <circle cx="200" cy="178" r="5" fill="#ede8df" opacity="0.38"/>
-            <circle cx="88" cy="34" r="4" fill="#ede8df" opacity="0.3"/>
-            <circle cx="312" cy="34" r="4" fill="#ede8df" opacity="0.3"/>
-            <circle cx="88" cy="166" r="4" fill="#ede8df" opacity="0.3"/>
-            <circle cx="312" cy="166" r="4" fill="#ede8df" opacity="0.3"/>
+            <circle cx="200" cy="100" r="12" fill="#B49A70" opacity="0.88"/>
+            <circle cx="200" cy="100" r="20" fill="none" stroke="#B49A70" stroke-width="1" opacity="0.2"/>
+            <circle cx="200" cy="100" r="34" fill="none" stroke="#B49A70" stroke-width="0.6" opacity="0.1"/>
+            <circle cx="128" cy="62" r="8.5" fill="#B49A70" opacity="0.65"/>
+            <circle cx="272" cy="62" r="8.5" fill="#B49A70" opacity="0.65"/>
+            <circle cx="128" cy="138" r="8.5" fill="#B49A70" opacity="0.65"/>
+            <circle cx="272" cy="138" r="8.5" fill="#B49A70" opacity="0.65"/>
+            <circle cx="58" cy="100" r="6" fill="#B49A70" opacity="0.48"/>
+            <circle cx="342" cy="100" r="6" fill="#B49A70" opacity="0.48"/>
+            <circle cx="200" cy="22" r="5" fill="#B49A70" opacity="0.38"/>
+            <circle cx="200" cy="178" r="5" fill="#B49A70" opacity="0.38"/>
+            <circle cx="88" cy="34" r="4" fill="#B49A70" opacity="0.3"/>
+            <circle cx="312" cy="34" r="4" fill="#B49A70" opacity="0.3"/>
+            <circle cx="88" cy="166" r="4" fill="#B49A70" opacity="0.3"/>
+            <circle cx="312" cy="166" r="4" fill="#B49A70" opacity="0.3"/>
             <!-- Connexions principales épaisses -->
-            <line x1="200" y1="100" x2="128" y2="62" stroke="#ede8df" stroke-width="2" opacity="0.38"/>
-            <line x1="200" y1="100" x2="272" y2="62" stroke="#ede8df" stroke-width="2" opacity="0.38"/>
-            <line x1="200" y1="100" x2="128" y2="138" stroke="#ede8df" stroke-width="2" opacity="0.38"/>
-            <line x1="200" y1="100" x2="272" y2="138" stroke="#ede8df" stroke-width="2" opacity="0.38"/>
-            <line x1="200" y1="100" x2="58" y2="100" stroke="#ede8df" stroke-width="1.3" opacity="0.22"/>
-            <line x1="200" y1="100" x2="342" y2="100" stroke="#ede8df" stroke-width="1.3" opacity="0.22"/>
-            <line x1="200" y1="100" x2="200" y2="22" stroke="#ede8df" stroke-width="1.3" opacity="0.22"/>
-            <line x1="200" y1="100" x2="200" y2="178" stroke="#ede8df" stroke-width="1.3" opacity="0.22"/>
+            <line x1="200" y1="100" x2="128" y2="62" stroke="#B49A70" stroke-width="2" opacity="0.38"/>
+            <line x1="200" y1="100" x2="272" y2="62" stroke="#B49A70" stroke-width="2" opacity="0.38"/>
+            <line x1="200" y1="100" x2="128" y2="138" stroke="#B49A70" stroke-width="2" opacity="0.38"/>
+            <line x1="200" y1="100" x2="272" y2="138" stroke="#B49A70" stroke-width="2" opacity="0.38"/>
+            <line x1="200" y1="100" x2="58" y2="100" stroke="#B49A70" stroke-width="1.3" opacity="0.22"/>
+            <line x1="200" y1="100" x2="342" y2="100" stroke="#B49A70" stroke-width="1.3" opacity="0.22"/>
+            <line x1="200" y1="100" x2="200" y2="22" stroke="#B49A70" stroke-width="1.3" opacity="0.22"/>
+            <line x1="200" y1="100" x2="200" y2="178" stroke="#B49A70" stroke-width="1.3" opacity="0.22"/>
             <!-- Connexions secondaires -->
-            <line x1="128" y1="62" x2="58" y2="100" stroke="#ede8df" stroke-width="0.9" opacity="0.18"/>
-            <line x1="128" y1="62" x2="88" y2="34" stroke="#ede8df" stroke-width="0.9" opacity="0.18"/>
-            <line x1="128" y1="62" x2="200" y2="22" stroke="#ede8df" stroke-width="0.9" opacity="0.18"/>
-            <line x1="272" y1="62" x2="342" y2="100" stroke="#ede8df" stroke-width="0.9" opacity="0.18"/>
-            <line x1="272" y1="62" x2="312" y2="34" stroke="#ede8df" stroke-width="0.9" opacity="0.18"/>
-            <line x1="272" y1="62" x2="200" y2="22" stroke="#ede8df" stroke-width="0.9" opacity="0.18"/>
-            <line x1="128" y1="138" x2="58" y2="100" stroke="#ede8df" stroke-width="0.9" opacity="0.18"/>
-            <line x1="128" y1="138" x2="88" y2="166" stroke="#ede8df" stroke-width="0.9" opacity="0.18"/>
-            <line x1="128" y1="138" x2="200" y2="178" stroke="#ede8df" stroke-width="0.9" opacity="0.18"/>
-            <line x1="272" y1="138" x2="342" y2="100" stroke="#ede8df" stroke-width="0.9" opacity="0.18"/>
-            <line x1="272" y1="138" x2="312" y2="166" stroke="#ede8df" stroke-width="0.9" opacity="0.18"/>
-            <line x1="272" y1="138" x2="200" y2="178" stroke="#ede8df" stroke-width="0.9" opacity="0.18"/>
+            <line x1="128" y1="62" x2="58" y2="100" stroke="#B49A70" stroke-width="0.9" opacity="0.18"/>
+            <line x1="128" y1="62" x2="88" y2="34" stroke="#B49A70" stroke-width="0.9" opacity="0.18"/>
+            <line x1="128" y1="62" x2="200" y2="22" stroke="#B49A70" stroke-width="0.9" opacity="0.18"/>
+            <line x1="272" y1="62" x2="342" y2="100" stroke="#B49A70" stroke-width="0.9" opacity="0.18"/>
+            <line x1="272" y1="62" x2="312" y2="34" stroke="#B49A70" stroke-width="0.9" opacity="0.18"/>
+            <line x1="272" y1="62" x2="200" y2="22" stroke="#B49A70" stroke-width="0.9" opacity="0.18"/>
+            <line x1="128" y1="138" x2="58" y2="100" stroke="#B49A70" stroke-width="0.9" opacity="0.18"/>
+            <line x1="128" y1="138" x2="88" y2="166" stroke="#B49A70" stroke-width="0.9" opacity="0.18"/>
+            <line x1="128" y1="138" x2="200" y2="178" stroke="#B49A70" stroke-width="0.9" opacity="0.18"/>
+            <line x1="272" y1="138" x2="342" y2="100" stroke="#B49A70" stroke-width="0.9" opacity="0.18"/>
+            <line x1="272" y1="138" x2="312" y2="166" stroke="#B49A70" stroke-width="0.9" opacity="0.18"/>
+            <line x1="272" y1="138" x2="200" y2="178" stroke="#B49A70" stroke-width="0.9" opacity="0.18"/>
             <!-- Textes nœuds -->
-            <text x="200" y="104" font-family="Georgia,serif" font-size="8.5" font-weight="bold" fill="#1a3a2a" text-anchor="middle" opacity="0.9">FSA</text>
-            <text x="128" y="66" font-family="Georgia,serif" font-size="5.5" fill="#1a3a2a" text-anchor="middle" opacity="0.85">ESSEC</text>
-            <text x="272" y="66" font-family="Georgia,serif" font-size="5" fill="#1a3a2a" text-anchor="middle" opacity="0.85">FOYER</text>
-            <text x="200" y="192" font-family="Georgia,serif" font-size="8.5" fill="#ede8df" opacity="0.5" text-anchor="middle" letter-spacing="4">RÉSEAU · EXCELLENCE</text>
+            <text x="200" y="104" font-family="Georgia,serif" font-size="8.5" font-weight="bold" fill="#183B35" text-anchor="middle" opacity="0.9">FSA</text>
+            <text x="128" y="66" font-family="Georgia,serif" font-size="5.5" fill="#183B35" text-anchor="middle" opacity="0.85">ESSEC</text>
+            <text x="272" y="66" font-family="Georgia,serif" font-size="5" fill="#183B35" text-anchor="middle" opacity="0.85">FOYER</text>
+            <text x="200" y="192" font-family="Georgia,serif" font-size="8.5" fill="#B49A70" opacity="0.5" text-anchor="middle" letter-spacing="4">RÉSEAU · EXCELLENCE</text>
           </svg>
         </div>
         <div class="news-card-body">
@@ -1753,7 +1737,7 @@ section { padding: 7rem 3rem; }
       <p class="section-subtitle fade-in" style="margin: 0 auto;">Vous êtes un étudiant marocain brillant et ambitieux ? Déposez votre candidature.</p>
     </div>
     <div class="candidature-info fade-in">
-      <p>📅 Les candidatures sont ouvertes du <strong>1er avril au 30 juin</strong> chaque année.</p>
+      <p>Les candidatures sont ouvertes du <strong>1er avril au 30 juin</strong> chaque année.</p>
     </div>
     <div class="fade-in" style="text-align:center; margin-top:2rem;">
       <p style="font-size:1rem; color:var(--text-body); line-height:1.8; margin-bottom:0.5rem;">
@@ -1761,7 +1745,7 @@ section { padding: 7rem 3rem; }
         Il vous permettra de renseigner vos informations et de <strong>téléverser votre CV</strong> en toute sécurité.
       </p>
       <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:2rem;">
-        📎 Formats CV acceptés : PDF, DOC, DOCX
+        Formats CV acceptés : PDF, DOC, DOCX
       </p>
       <a href="https://forms.gle/kHLGREcr4mfHAjvj9" target="_blank" class="btn-submit" style="display:inline-block; text-decoration:none; padding:1rem 3rem; font-size:1rem;">
         Accéder au formulaire de candidature →
@@ -1879,10 +1863,10 @@ document.getElementById('partnerForm').addEventListener('submit', async function
       form.style.display = 'none';
       msg.style.display = 'block';
       msg.style.background = '#e8f5ee';
-      msg.style.color = '#1a3a2a';
+      msg.style.color = '#183B35';
       msg.style.padding = '2rem';
       msg.style.fontSize = '1rem';
-      msg.innerHTML = '<div style="font-size:2.5rem;margin-bottom:1rem;">✅</div><strong>Demande envoyée avec succès !</strong><br><br>Nous avons bien reçu votre demande de partenariat et vous contacterons très prochainement.<br><br><button onclick="document.getElementById(\'partnerModal\').style.display=\'none\'; document.getElementById(\'partnerForm\').style.display=\'block\'; document.getElementById(\'partnerFormMsg\').style.display=\'none\'; document.getElementById(\'partnerForm\').reset();" style="margin-top:1rem; background:var(--green-deep); color:white; border:none; padding:0.7rem 2rem; border-radius:50px; cursor:pointer; font-family:\'DM Sans\',sans-serif; font-weight:600;">Fermer</button>';
+      msg.innerHTML = '<strong>Demande envoyée avec succès !</strong><br><br>Nous avons bien reçu votre demande de partenariat et vous contacterons très prochainement.<br><br><button onclick="document.getElementById(\'partnerModal\').style.display=\'none\'; document.getElementById(\'partnerForm\').style.display=\'block\'; document.getElementById(\'partnerFormMsg\').style.display=\'none\'; document.getElementById(\'partnerForm\').reset();" style="margin-top:1rem; background:var(--green-deep); color:white; border:none; padding:0.7rem 2rem; border-radius:50px; cursor:pointer; font-family:\'Lato\',sans-serif; font-weight:600;">Fermer</button>';
     } else {
       throw new Error('Erreur');
     }
@@ -1891,7 +1875,7 @@ document.getElementById('partnerForm').addEventListener('submit', async function
     msg.style.background = '#fff0f0';
     msg.style.color = '#c00';
     msg.style.padding = '1rem';
-    msg.textContent = '❌ Une erreur s\'est produite. Veuillez réessayer ou nous écrire directement.';
+    msg.textContent = 'Une erreur s\'est produite. Veuillez réessayer ou nous écrire directement.';
     btn.textContent = 'Envoyer ma demande →';
     btn.disabled = false;
   }
@@ -1924,7 +1908,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
       form.reset();
       msg.style.display = 'block';
       msg.style.background = '#e8f5ee';
-      msg.style.color = '#1a3a2a';
+      msg.style.color = '#183B35';
       msg.innerHTML = '<strong>Merci pour votre message !</strong><br>Nous reviendrons vers vous rapidement.';
       btn.textContent = 'Message envoyé';
     } else {
