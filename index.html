@@ -446,6 +446,7 @@ section { padding: 7rem 3rem; }
 }
 .capsule {
   text-align: left;
+  display: flex; flex-direction: column;
   padding-top: 1.8rem;
   border-top: 1px solid rgba(24,59,53,0.15);
 }
@@ -1093,6 +1094,18 @@ section { padding: 7rem 3rem; }
 .devise-slider { text-shadow: 0 0 14px rgba(244,241,234,0.95), 0 0 4px rgba(244,241,234,0.9); }
 .hero-buttons .btn-secondary { background: rgba(244,241,234,0.92); }
 .hero-buttons .btn-secondary:hover { background: var(--green-deep); color: var(--cream); }
+
+/* Domaines d'intervention : blocs homogènes, éléments alignés ligne à ligne */
+.capsules-grid { row-gap: 0; }
+.capsule {
+  display: grid; grid-row: span 4;
+  grid-template-rows: subgrid;
+  row-gap: 0; padding-bottom: 3rem;
+}
+.capsule h3 { margin-bottom: 0.4rem; }
+.capsule-list { margin-bottom: 1.4rem; }
+.capsule-conviction { display: block; }
+@media (max-width: 768px) { .capsule { padding-bottom: 2.5rem; } }
 </style>
 </head>
 <body>
@@ -1209,9 +1222,8 @@ section { padding: 7rem 3rem; }
           <li><strong>Accompagnement des parcours :</strong> encourager la poursuite des études et le développement des compétences.</li>
           <li><strong>Mentorat :</strong> guider les jeunes dans leurs choix académiques et leur orientation professionnelle.</li>
           <li><strong>Égalité d'accès :</strong> favoriser l'accès aux meilleures opportunités, indépendamment de l'origine sociale ou géographique.</li>
-          <li><strong>Valorisation des talents :</strong> encourager le mérite, l'autonomie et l'excellence.</li>
         </ul>
-        <p class="capsule-conviction">« Nous sommes convaincus que chaque individu porte en lui un potentiel qui mérite d'être reconnu, encouragé et pleinement valorisé. »</p>
+        <p class="capsule-conviction"><strong>Notre conviction</strong> Chaque individu porte en lui un potentiel qui mérite d'être reconnu, encouragé et pleinement valorisé.</p>
       </article>
       <article class="capsule fade-in">
         <h3>Eau &amp; Vie</h3>
@@ -1221,20 +1233,18 @@ section { padding: 7rem 3rem; }
           <li><strong>Solutions durables :</strong> installer des systèmes de pompage alimentés par l'énergie solaire.</li>
           <li><strong>Soutien à l'agriculture :</strong> développer, lorsque cela est possible, des systèmes d'irrigation au bénéfice de plusieurs villages.</li>
           <li><strong>Accès à l'eau dans les écoles :</strong> améliorer les conditions d'hygiène et le quotidien des élèves.</li>
-          <li><strong>Amélioration des conditions de vie :</strong> alléger les contraintes des familles et favoriser un environnement plus sain pour les communautés.</li>
         </ul>
         <p class="capsule-conviction"><strong>Notre conviction</strong> L’eau est au cœur de la vie et du bien-être de chaque communauté.</p>
       </article>
       <article class="capsule fade-in">
         <h3>Enfance &amp; Avenir</h3>
-        <p class="capsule-tagline">Accompagner les enfants pour améliorer leur quotidien et leur offrir les conditions nécessaires à leur épanouissement et à leur réussite scolaire.</p>
+        <p class="capsule-tagline">Offrir à chaque enfant les conditions de son épanouissement</p>
         <ul class="capsule-list">
           <li><strong>Rentrée scolaire :</strong> accompagner les enfants issus de familles en situation de précarité pour aborder chaque rentrée dans de bonnes conditions.</li>
           <li><strong>Fournitures scolaires :</strong> offrir un cartable neuf et les fournitures nécessaires à leur apprentissage.</li>
           <li><strong>Habillement :</strong> mettre à leur disposition des vêtements et des chaussures neufs, adaptés à leurs besoins.</li>
-          <li><strong>Égalité des chances :</strong> contribuer à leur offrir un environnement favorable à l'apprentissage, à l'épanouissement et à la réussite.</li>
         </ul>
-        <p class="capsule-conviction"><strong>Notre conviction</strong> « Chaque enfant mérite de grandir dans des conditions favorables à son épanouissement, à son apprentissage et à la construction de son avenir. »</p>
+        <p class="capsule-conviction"><strong>Notre conviction</strong> Chaque enfant mérite de grandir dans des conditions favorables à son épanouissement, à son apprentissage et à la construction de son avenir.</p>
       </article>
       <article class="capsule fade-in">
         <h3>Solidarité &amp; Inclusion</h3>
