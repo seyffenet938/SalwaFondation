@@ -963,6 +963,21 @@ section { padding: 7rem 3rem; }
   /* Hero mobile : texte dans le ciel, enfants visibles en bas */
   .hero-content { transform: translateY(-21vh); padding: 0 1.25rem; }
   .hero-logo { width: 50vw; margin-bottom: 1rem; }
+  /* Photo moins zoomée sur mobile : groupe entier visible en bas, ciel prolongé au-dessus */
+  .hero-bg {
+    background-size: 165vw auto;
+    background-position: 12% 100%;
+    background-color: rgb(192, 203, 218);
+    z-index: 0;
+  }
+  .hero-bg::before { z-index: 1; }
+  .hero-bg::after {
+    content: ''; position: absolute; left: 0; right: 0;
+    bottom: calc(165vw * 941 / 1672 + 2px); height: 30vw;
+    background: linear-gradient(to bottom, rgb(192,203,218), rgba(192,203,218,0));
+    z-index: 0;
+    transform: translateY(100%);
+  }
   .hero-devises { margin: 0.6rem 0; }
   .hero-buttons { margin-top: 1rem; }
   .hero-buttons a { padding: 0.8rem 1.8rem; font-size: 0.75rem; }
