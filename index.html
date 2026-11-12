@@ -273,7 +273,7 @@ section { padding: 7rem 3rem; }
 }
 .devise-content {
   position: relative; z-index: 1;
-  max-width: 1100px; margin: 0 auto;
+  max-width: 1240px; margin: 0 auto;
   text-align: center;
 }
 .devise-content .section-label { color: var(--gold-light); }
@@ -286,8 +286,12 @@ section { padding: 7rem 3rem; }
   margin-bottom: 4rem;
 }
 .values-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 2rem; margin-top: 3rem;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem; margin-top: 3rem;
+}
+.values-grid .value-card { padding: 2.5rem 1.6rem; }
+@media (max-width: 1200px) {
+  .values-grid { grid-template-columns: repeat(2, 1fr); max-width: 780px; margin-left: auto; margin-right: auto; }
 }
 .value-card {
   background: rgba(255,255,255,0.05);
@@ -1065,6 +1069,11 @@ section { padding: 7rem 3rem; }
         <div class="value-icon">♥</div>
         <h3>Solidarité</h3>
         <p>Réussir ensemble pour le Maroc de demain. Former une communauté engagée et responsable.</p>
+      </div>
+      <div class="value-card fade-in">
+        <div class="value-icon">🌱</div>
+        <h3>Enfance &amp; Avenir</h3>
+        <p>Accompagner chaque enfant dans son quotidien et sa scolarité. Lui offrir les conditions pour s'épanouir et construire son avenir.</p>
       </div>
     </div>
   </div>
