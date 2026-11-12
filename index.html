@@ -1066,7 +1066,7 @@ section { padding: 7rem 3rem; }
   border-color: var(--green-deep) !important;
 }
 .menu-toggle span { background: var(--green-deep); }
-.hero-bg::before { background: rgba(244, 241, 234, 0.80); }
+.hero-bg::before { background: none; }
 .hero-logo { width: min(380px, 62vw); margin-bottom: 1.5rem; }
 .devise-slider { color: var(--green-deep); }
 .btn-secondary { color: var(--green-deep); border-color: var(--green-deep); }
@@ -1078,6 +1078,21 @@ section { padding: 7rem 3rem; }
   .nav-links a.btn-candidature-nav { color: var(--cream) !important; }
   .hero-logo { width: 62vw; margin-bottom: 1rem; }
 }
+
+/* Accueil ordinateur : logo, phrase et bouton dans le ciel, au-dessus des étudiants */
+@media (min-width: 769px) {
+  .hero { align-items: flex-start; padding-top: 0; }
+  .hero-content { padding-top: max(96px, 10.5vh); }
+  .hero-logo { width: min(290px, 22vw); margin-bottom: 1rem; }
+  .hero-devises { margin: 0.4rem 0 0; }
+  .hero-buttons { margin-top: 1.2rem; }
+  .hero-buttons a { padding: 0.75rem 2rem; font-size: 0.8rem; }
+}
+
+/* Lisibilité sur la photo d'origine (sans voile) */
+.devise-slider { text-shadow: 0 0 14px rgba(244,241,234,0.95), 0 0 4px rgba(244,241,234,0.9); }
+.hero-buttons .btn-secondary { background: rgba(244,241,234,0.92); }
+.hero-buttons .btn-secondary:hover { background: var(--green-deep); color: var(--cream); }
 </style>
 </head>
 <body>
