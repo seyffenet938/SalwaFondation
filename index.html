@@ -1115,19 +1115,74 @@ section { padding: 7rem 3rem; }
 
 /* ===== Pages dédiées (une page par élément du menu) ===== */
 section[data-page] { display: none; }
-body.page-accueil section[data-page="accueil"],
-body.page-notre-mission section[data-page="notre-mission"],
-body.page-a-propos section[data-page="a-propos"],
-body.page-le-parcours section[data-page="le-parcours"],
-body.page-agir-avec-safe section[data-page="agir-avec-safe"],
-body.page-contact section[data-page="contact"],
-body.page-candidature section[data-page="candidature"] { display: block; }
+body.page-accueil section[data-page~="accueil"],
+body.page-notre-mission section[data-page~="notre-mission"],
+body.page-a-propos section[data-page~="a-propos"],
+body.page-le-parcours section[data-page~="le-parcours"],
+body.page-agir-avec-safe section[data-page~="agir-avec-safe"],
+body.page-contact section[data-page~="contact"],
+body.page-candidature section[data-page~="candidature"] { display: block; }
 body.page-accueil section.hero { display: flex; }
 body.page-inner { padding-top: 60px; }
 .nav-links a.active::after { width: 100%; }
 @media (max-width: 768px) {
   .nav-links a.active { text-decoration: underline; text-decoration-color: var(--gold); text-underline-offset: 6px; }
   .nav-links a.btn-candidature-nav.active { text-decoration: none; }
+}
+
+/* ===== Sous-menus déroulants ===== */
+.nav-item { position: relative; display: flex; align-items: center; }
+.nav-sub-toggle { display: none; }
+.nav-sub {
+  position: absolute; top: 100%; left: 50%;
+  transform: translate(-50%, 6px);
+  min-width: 240px; padding: 0.6rem 0;
+  background: var(--cream);
+  border: 1px solid rgba(24, 59, 53, 0.12);
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(24, 59, 53, 0.14);
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+  z-index: 1001;
+}
+.nav-sub::before { content: ''; position: absolute; left: 0; right: 0; top: -18px; height: 18px; }
+.nav-links .nav-sub a {
+  display: block; padding: 0.6rem 1.3rem;
+  font-size: 0.88rem; font-weight: 500;
+  text-transform: none; letter-spacing: 0.2px;
+  color: var(--green-deep); white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+.nav-links .nav-sub a::after { display: none; }
+.nav-links .nav-sub a:hover { background: rgba(24, 59, 53, 0.07); color: var(--green-deep); }
+@media (min-width: 769px) {
+  .nav-item:hover .nav-sub,
+  .nav-item:focus-within .nav-sub {
+    opacity: 1; visibility: visible; transform: translate(-50%, 14px);
+  }
+}
+@media (max-width: 768px) {
+  .nav-links { justify-content: flex-start; padding: 90px 1.5rem 3rem; gap: 1.3rem; overflow-y: auto; }
+  .nav-item { flex-wrap: wrap; justify-content: center; width: 100%; }
+  .nav-sub-toggle {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 36px; height: 36px; margin-left: 0.3rem;
+    background: none; border: none; color: var(--green-deep); cursor: pointer;
+  }
+  .nav-sub-toggle svg { transition: transform 0.25s ease; }
+  .nav-item.open .nav-sub-toggle svg { transform: rotate(180deg); }
+  .nav-sub {
+    position: static; transform: none; opacity: 1; visibility: visible;
+    display: none; flex-basis: 100%; min-width: 0;
+    background: none; border: none; box-shadow: none;
+    padding: 0.3rem 0 0; text-align: center;
+  }
+  .nav-sub::before { display: none; }
+  .nav-item.open .nav-sub { display: block; }
+  .nav-links .nav-sub a {
+    font-size: 1rem !important; padding: 0.4rem 0;
+    color: var(--text-muted) !important; white-space: normal;
+  }
 }
 </style>
 </head>
@@ -1137,11 +1192,44 @@ body.page-inner { padding-top: 60px; }
 <nav class="navbar" id="navbar">
   <a href="#accueil" class="nav-logo"><img src="data:image/png;base64,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" alt="Fondation Salwa Andaloussi pour l’Éducation" class="nav-logo-img"></a>
   <div class="nav-links" id="navLinks">
-    <a href="#notre-mission" data-nav="notre-mission">Notre mission</a>
-    <a href="#a-propos" data-nav="a-propos">À propos de nous</a>
-    <a href="#le-parcours" data-nav="le-parcours">Le parcours</a>
-    <a href="#agir-avec-safe" data-nav="agir-avec-safe">Agir avec SAFE</a>
-    <a href="#contact" data-nav="contact">Contact</a>
+    <div class="nav-item has-sub">
+      <a href="#notre-mission" data-nav="notre-mission">Notre mission</a><button type="button" class="nav-sub-toggle" aria-label="Afficher le sous-menu"><svg viewBox="0 0 12 8" width="12" height="8" aria-hidden="true"><path d="M1 1.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="nav-sub">
+        <a href="#notre-mission/devise">Notre devise</a>
+        <a href="#notre-mission/domaines-intervention">Nos domaines d'intervention</a>
+      </div>
+    </div>
+    <div class="nav-item has-sub">
+      <a href="#a-propos" data-nav="a-propos">À propos de nous</a><button type="button" class="nav-sub-toggle" aria-label="Afficher le sous-menu"><svg viewBox="0 0 12 8" width="12" height="8" aria-hidden="true"><path d="M1 1.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="nav-sub">
+        <a href="#a-propos/qui-sommes-nous">Qui sommes-nous</a>
+        <a href="#a-propos/mot-de-la-presidente">Mot de la Présidente</a>
+      </div>
+    </div>
+    <div class="nav-item has-sub">
+      <a href="#le-parcours" data-nav="le-parcours">Le parcours</a><button type="button" class="nav-sub-toggle" aria-label="Afficher le sous-menu"><svg viewBox="0 0 12 8" width="12" height="8" aria-hidden="true"><path d="M1 1.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="nav-sub">
+        <a href="#le-parcours/etape-selection">Sélection des candidats</a>
+        <a href="#le-parcours/etape-entretien">Entretien de sélection</a>
+        <a href="#le-parcours/etape-soutien">Soutien financier</a>
+        <a href="#le-parcours/etape-accompagnement">Accompagnement pendant les études</a>
+      </div>
+    </div>
+    <div class="nav-item has-sub">
+      <a href="#agir-avec-safe" data-nav="agir-avec-safe">Agir avec SAFE</a><button type="button" class="nav-sub-toggle" aria-label="Afficher le sous-menu"><svg viewBox="0 0 12 8" width="12" height="8" aria-hidden="true"><path d="M1 1.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="nav-sub">
+        <a href="#agir-avec-safe/agir">Agir avec SAFE</a>
+        <a href="#agir-avec-safe/nos-partenaires">Nos partenaires</a>
+        <a href="#agir-avec-safe/faire-un-don">Faire un don</a>
+      </div>
+    </div>
+    <div class="nav-item has-sub">
+      <a href="#contact" data-nav="contact">Contact</a><button type="button" class="nav-sub-toggle" aria-label="Afficher le sous-menu"><svg viewBox="0 0 12 8" width="12" height="8" aria-hidden="true"><path d="M1 1.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="nav-sub">
+        <a href="#contact/coordonnees">Nos coordonnées</a>
+        <a href="#contact/nous-ecrire">Nous écrire</a>
+      </div>
+    </div>
     <a href="#candidature" class="btn-candidature-nav" data-nav="candidature">Candidature</a>
   </div>
   <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
@@ -1163,7 +1251,7 @@ body.page-inner { padding-top: 60px; }
 </section>
 
 <!-- DEVISE / VALEURS -->
-<section class="devise-section" data-page="notre-mission" id="devise">
+<section class="devise-section" data-page="accueil notre-mission" id="devise">
   <div class="devise-content">
     <h2 class="section-title fade-in" style="margin-bottom: 0.8rem;">Fondation Salwa Andaloussi</h2>
     <span class="section-label" style="display: block; margin-bottom: 1.5rem;">Notre devise</span>
@@ -1190,7 +1278,7 @@ body.page-inner { padding-top: 60px; }
 </section>
 
 <!-- À PROPOS DE NOUS -->
-<section class="foundation-section" data-page="a-propos" id="apropos">
+<section class="foundation-section" data-page="accueil a-propos" id="apropos" data-anchor="qui-sommes-nous">
   <div class="foundation-content">
     <h2 class="section-title fade-in" style="color: var(--green-accent);">À propos de nous</h2>
     <p class="apropos-accroche fade-in">Le talent est partout. Les opportunités, pas encore : nous les créons.</p>
@@ -1207,7 +1295,7 @@ body.page-inner { padding-top: 60px; }
 </section>
 
 <!-- MOT DE LA PRÉSIDENTE -->
-<section class="about-section" data-page="a-propos" id="about">
+<section class="about-section" data-page="accueil a-propos" id="about" data-anchor="mot-de-la-presidente">
   <div class="about-grid">
     <div class="about-text fade-in-left" style="max-width:620px;">
       <span class="section-label">Mot de la Présidente</span>
@@ -1225,7 +1313,7 @@ body.page-inner { padding-top: 60px; }
 </section>
 
 <!-- ENGAGEMENT -->
-<section class="engagement-section" data-page="notre-mission" id="engagement">
+<section class="engagement-section" data-page="notre-mission" id="engagement" data-anchor="domaines-intervention">
   <div class="engagement-container">
     <div class="engagement-header">
       <span class="section-label fade-in">Notre engagement</span>
@@ -1295,7 +1383,7 @@ body.page-inner { padding-top: 60px; }
       <p class="section-subtitle fade-in">Un processus de sélection rigoureux et un accompagnement complet pour les talents de demain.</p>
     </div>
     <div class="parcours-timeline">
-      <div class="parcours-step" data-step="1">
+      <div class="parcours-step" data-step="1" id="etape-selection">
         <div class="parcours-step-content">
           <h3>Sélection des candidats</h3>
           <p>Après une première demande de candidature, la Fondation vous envoie un questionnaire détaillé afin d'évaluer votre profil. La sélection repose sur quatre critères essentiels :</p>
@@ -1307,13 +1395,13 @@ body.page-inner { padding-top: 60px; }
           </ul>
         </div>
       </div>
-      <div class="parcours-step" data-step="2">
+      <div class="parcours-step" data-step="2" id="etape-entretien">
         <div class="parcours-step-content">
           <h3>Entretien de sélection</h3>
           <p>Si votre candidature est retenue, vous êtes invité à participer à un entretien avec l'équipe de la Fondation. Cet échange permet de mieux comprendre votre parcours, votre motivation et votre ambition.</p>
         </div>
       </div>
-      <div class="parcours-step" data-step="3">
+      <div class="parcours-step" data-step="3" id="etape-soutien">
         <div class="parcours-step-content">
           <h3>Soutien financier</h3>
           <p>Les étudiants sélectionnés bénéficient d'une bourse de la Fondation couvrant les frais essentiels liés aux études :</p>
@@ -1325,7 +1413,7 @@ body.page-inner { padding-top: 60px; }
           <p>La Fondation accompagne également les étudiants dans la recherche de bourses complémentaires et développe des partenariats avec des universités.</p>
         </div>
       </div>
-      <div class="parcours-step" data-step="4">
+      <div class="parcours-step" data-step="4" id="etape-accompagnement">
         <div class="parcours-step-content">
           <h3>Accompagnement pendant les études</h3>
           <p>Tout au long de leur parcours académique, les étudiants de la Fondation bénéficient d'un accompagnement humain et professionnel :</p>
@@ -1345,7 +1433,7 @@ body.page-inner { padding-top: 60px; }
 </section>
 
 <!-- PARTENAIRES -->
-<section class="partners-section" data-page="agir-avec-safe" id="partners">
+<section class="partners-section" data-page="agir-avec-safe" id="partners" data-anchor="agir">
   <div class="partners-container">
     <span class="section-label fade-in">Agir avec SAFE</span>
     <h2 class="section-title fade-in">Construire ensemble une solidarité durable</h2>
@@ -1358,7 +1446,7 @@ body.page-inner { padding-top: 60px; }
       <li><strong>Confiance durable :</strong> construire des relations solides avec nos donateurs et partenaires.</li>
     </ul>
     <p class="partners-engagement fade-in"><strong>Notre engagement :</strong> unir les forces, agir avec responsabilité et faire de chaque soutien une action concrète.</p>
-    <h3 class="partners-subheading fade-in">Nos partenaires</h3>
+    <h3 class="partners-subheading fade-in" id="nos-partenaires">Nos partenaires</h3>
     <div class="partners-grid">
 
       <!-- ESSEC -->
@@ -1431,7 +1519,7 @@ body.page-inner { padding-top: 60px; }
 </section>
 
 <!-- DONS -->
-<section class="donate-section" data-page="agir-avec-safe" id="donate">
+<section class="donate-section" data-page="agir-avec-safe" id="donate" data-anchor="faire-un-don">
   <div class="donate-container">
     <span class="section-label">Faire un don</span>
     <h2 class="section-title fade-in">Votre don devient une action. Votre action devient une chance.</h2>
@@ -1503,17 +1591,6 @@ body.page-inner { padding-top: 60px; }
   </div>
 </div>
 
-<!-- TÉMOIGNAGES -->
-<section class="testimonials-section" data-page="accueil" id="testimonials">
-  <div class="testimonials-container">
-    <span class="section-label fade-in">Témoignages</span>
-    <h2 class="section-title fade-in">Ils racontent leur parcours avec la Fondation</h2>
-    <div class="testimonials-placeholder fade-in">
-      <p><strong>Vidéos de témoignages à venir</strong></p>
-      <p>Les témoignages des étudiants de la Fondation seront ajoutés sous forme de vidéos.</p>
-    </div>
-  </div>
-</section>
 
 <!-- AU CŒUR DE LA FONDATION -->
 <section class="news-section" data-page="accueil" id="news">
@@ -1760,7 +1837,7 @@ body.page-inner { padding-top: 60px; }
       <h2 class="section-title fade-in">Prenons contact</h2>
       <p class="section-subtitle fade-in" style="margin: 0 auto;">Pour toute demande de partenariat ou d'information, notre équipe sera ravie d'échanger avec vous.</p>
     </div>
-    <div class="contact-info fade-in">
+    <div class="contact-info fade-in" id="coordonnees">
       <div class="contact-info-item">
         <span class="contact-info-label">Adresse du bureau</span>
         <p><strong>Fondation Salwa Andaloussi pour l’Éducation</strong><br>
@@ -1776,7 +1853,7 @@ body.page-inner { padding-top: 60px; }
         <p><a href="mailto:contact@fondationsalwaandaloussi.com">contact@fondationsalwaandaloussi.com</a></p>
       </div>
     </div>
-    <form class="contact-form fade-in" id="contactForm">
+    <form class="contact-form fade-in" id="contactForm" data-anchor="nous-ecrire">
       <div id="contactFormMsg" style="display:none; padding:1rem; border-radius:12px; margin-bottom:1rem; text-align:center;"></div>
       <div class="form-row">
         <div class="form-group">
@@ -2014,21 +2091,35 @@ const PAGES = {
 };
 
 // Trouve la page à afficher et, le cas échéant, la section où se placer
+let currentPage = null;
+function findAnchor(id) {
+  return id ? (document.getElementById(id) || document.querySelector('[data-anchor="' + id + '"]')) : null;
+}
 function resolveRoute(hash) {
-  const id = decodeURIComponent((hash || '').replace(/^#/, ''));
-  if (!id || id === 'home') return { page: 'accueil', target: null };
-  if (PAGES[id]) return { page: id, target: null };
-  const el = document.getElementById(id);
-  const section = el && el.closest('section[data-page]');
-  if (section) {
-    const first = document.querySelector('section[data-page="' + section.dataset.page + '"]');
-    return { page: section.dataset.page, target: (first === el) ? null : el };
+  const raw = decodeURIComponent((hash || '').replace(/^#/, ''));
+  const parts = raw.split('/');
+  let page = null, el = null;
+  if (!raw || parts[0] === 'home') return { page: 'accueil', target: null };
+  if (PAGES[parts[0]]) {
+    page = parts[0];
+    el = findAnchor(parts[1]);
+  } else {
+    el = findAnchor(parts[0]);
+    const section = el && el.closest('section[data-page]');
+    if (!section) return { page: 'accueil', target: null };
+    const list = section.dataset.page.split(' ');
+    page = list.includes(currentPage) ? currentPage : (list.find(p => p !== 'accueil') || list[0]);
   }
-  return { page: 'accueil', target: null };
+  if (el) {
+    const first = document.querySelector('section[data-page~="' + page + '"]');
+    if (el === first) el = null;
+  }
+  return { page: page, target: el };
 }
 
 function showPage(hash, smooth) {
   const route = resolveRoute(hash);
+  currentPage = route.page;
   const body = document.body;
   Object.keys(PAGES).forEach(p => body.classList.remove('page-' + p));
   body.classList.add('page-' + route.page);
@@ -2039,7 +2130,8 @@ function showPage(hash, smooth) {
   });
   updateNavbar();
   if (route.target) {
-    const top = route.target.getBoundingClientRect().top + window.scrollY - navbar.offsetHeight;
+    const extra = route.target.tagName === 'SECTION' ? 0 : 24;
+    const top = route.target.getBoundingClientRect().top + window.scrollY - navbar.offsetHeight - extra;
     window.scrollTo({ top: Math.max(0, top), behavior: smooth ? 'smooth' : 'instant' });
   } else {
     window.scrollTo({ top: 0, behavior: 'instant' });
@@ -2051,12 +2143,22 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     const href = this.getAttribute('href');
     if (href === '#') return;
     e.preventDefault();
+    this.blur();
     const current = resolveRoute(location.hash).page;
     if (href !== location.hash) history.pushState(null, '', href);
     showPage(href, resolveRoute(href).page === current);
   });
 });
 window.addEventListener('popstate', () => showPage(location.hash, false));
+// Mobile : la flèche affiche/masque le sous-menu
+document.querySelectorAll('.nav-sub-toggle').forEach(btn => {
+  btn.addEventListener('click', function(e) {
+    e.preventDefault(); e.stopPropagation();
+    const item = this.closest('.nav-item');
+    const open = item.classList.toggle('open');
+    this.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+});
 window.addEventListener('hashchange', () => showPage(location.hash, false));
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 showPage(location.hash, false);
